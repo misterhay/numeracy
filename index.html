@@ -12,10 +12,18 @@
         function roll(sides) {
             var randomColor = colors[Math.floor(Math.random() * colors.length)];
             document.getElementById(sides).style.color = randomColor;
+            if (sides == 2) {
+                let number = Math.random();
+                    if (number < 0.5) {
+                      let randomNumber = "heads";
+                    } else {
+                      let randomNumber = "tails";
+                    }
+            }
             if (sides == 10) { // 0-9
-                var randomNumber = Math.floor(Math.random() * sides);
+                let randomNumber = Math.floor(Math.random() * sides);
             } else {
-                var randomNumber = Math.floor(Math.random() * sides) + 1;
+                let randomNumber = Math.floor(Math.random() * sides) + 1;
             }
             document.getElementById(sides).innerText = randomNumber;
         }
@@ -24,13 +32,13 @@
 
 </head>
 <body style="background-color:darkslategrey;color:floralwhite;text-align:center;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif">
-<div style="font-size:200%" id="titleDiv">Numeracy Tools</div>
+<div style="font-size:200%" id="titleDiv">Random Number Generators</div>
 
 <p> </p>
 
 <table style="width:100%;margin-left:auto;margin-right:auto">
 <tr>
-<td><button onclick="roll(2)" id="d2Button" style="background-color:goldenrod;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif">1-2</button></td>
+<td><button onclick="roll(2)" id="d2Button" style="background-color:goldenrod;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif">Coin</button></td>
 <td><button onclick="roll(6)" id="d6Button" style="background-color:royalblue;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif">1-6</button></td>
 <td><button onclick="roll(8)" id="d8Button" style="background-color:firebrick;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif">1-8</button></td>
 <td><button onclick="roll(10)" id="d10Button" style="background-color:darkgreen;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif">0-9</button></td>
