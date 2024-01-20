@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Numeracy Tools</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34211446-1"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-34211446-1');</script>
+
+    <script>
+        var colors = ["red","orange","green","blue","purple"];
+        var parameters = new URLSearchParams(window.location.search);
+
+        function roll(sides) {
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById(sides).style.color = randomColor;
+            
+            if (sides == 2) {
+                let side;
+                let number = Math.random();
+                    if (number < 0.5) {
+                        side = "heads";
+                    } else {
+                        side = "tails";
+                    }
+                document.getElementById(sides).innerText = side;
+            }
+            else {
+                let randomNumber;
+                if (sides == 10) { // 0-9
+                    randomNumber = Math.floor(Math.random() * sides);
+                } else {
+                    randomNumber = Math.floor(Math.random() * sides) + 1;
+                }
+                document.getElementById(sides).innerText = randomNumber;
+            }
+        }
+
+    </script>
+
+</head>
+<body style="background-color:darkslategrey;color:floralwhite;text-align:center;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif;">
+<div style="font-size:200%" id="titleDiv">Random Number Generators</div>
+
+<p> </p>
+
+<table style="width:100%;margin-left:auto;margin-right:auto">
+<tr>
+<td><button onclick="roll(6)" id="d6Button" style="background-color:royalblue;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif;">1-6</button></td>
+<td><button onclick="roll(8)" id="d8Button" style="background-color:firebrick;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif;">1-8</button></td>
+<td><button onclick="roll(10)" id="d10Button" style="background-color:darkgreen;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif;">0-9</button></td>
+<td><button onclick="roll(2)" id="d2Button" style="background-color:goldenrod;color:floralwhite;font-size:200%;font-family:Cambria,Cochin,Georgia,Times,serif;">Coin</button></td>
+</tr>
+<tr>
+<td><div id="6" style="font-size:350%;color:floralwhite;background-color:floralwhite;">.</div></td>
+<td><div id="8" style="font-size:350%;color:floralwhite;background-color:floralwhite;">.</div></td>
+<td><div id="10" style="font-size:350%;color:floralwhite;background-color:floralwhite;">.</div></td>
+<td><div id="2" style="font-size:350%;color:floralwhite;background-color:floralwhite;font-family:'Courier New', Courier, monospace;">.</div></td>
+</tr>
+</table>
+
+</body>
+</html>
